@@ -1,5 +1,5 @@
 # **Counterstrike-Source_ClientLogViewer**
-Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeilen zu gehen, um nachzulesen was jemand in den Chat geschrieben hat oder um zu sehen ob ich den Gegner ueberhaupt getroffen habe. Deshalb habe ich die App gebaut, mit der ich auf einem zweiten Monitor via WebBrowser auf einen Blick sehe was mich interessiert.
+Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeilen zu gehen, um nachzulesen was jemand in den Chat geschrieben hat oder um zu sehen ob ich den Gegner ueberhaupt getroffen habe. Deshalb habe ich die App gebaut, mit der ich auf einem zweiten Monitor via Webbrowser auf einen Blick sehe was mich interessiert.
 <ul>
 <li>Wer mich getroffen(Weiß), gekillt hat(Rot)</li>
 <li>Wen ich getroffen(Weiß), gekillt habe(Grün)</li>
@@ -7,6 +7,7 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 <li>Admin Nachrichten(Gelb zwischen Trennlinien) &#x26; Spielerchat(Weiß,Türkis im Wechsel) sehen und nochmal leichter nachlesen, z.B wenn man auf die nächste Runde wartet</li>
 <li>Uhrzeit, so sieht man wann die Chatmessage kam -und man brauch das Fenster nicht wechseln um zu sehen ob es Bedtime ist. &#x1F601;</li>
 </ul>
+<img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_index_01.png"/>
 
 [![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/maxresdefault.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
 
@@ -25,7 +26,7 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 |".\LiteWebServer.psm1"| leichter Webserver der Seiten und Javascript von wwwroot s. unten bereitstellt
 |".\CSSConsoleFilter.ps1"|dieses Script ist die App selbst, vom Endanwender zu starten.<br/>Logfilter ist fuer die Deutsche Steamversion entwickelt, fuer andere Sprachen muss Anpassungen im Code gemacht werden.
 |"wwwroot"| Verzeichnis welches die Webseiten und Code fuer LiteWebServer enthaellt |
-|| <table border=0><tr><td><ul><li> index.html></td><td><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_index_01.png" widht=150px height=250px/> </li></ul></td></tr><tr><td><ul><li> DReport.html </li><li>Chat.html</li><li>script.js</li></ul></td><tr></table>|
+|| <table border=0><tr><td><ul><li> index.html></td><td><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_index_01.png" widht=150px height=250px/><br/>im Firefox </li></ul></td></tr><tr><td><ul><li> DReport.html </li><li>Chat.html</li><li>script.js</li></ul></td><tr></table>|
 
 ### Variablen, anzupassen an eigene Umgebung
 
@@ -50,7 +51,7 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 &#x24;global:webSocketChat    = "http://localhost:5002/" #"http://+:5002/",  # listen on any interface (matching netsh or running on admin console required)<br/>
 
 <&#35; 
-Will man von externen Geraeten(Tablet) auf den laufenden Webserver zugreifen (http://+:500x/) muss in der Windowsfirewall die Ports freigeben sein 
+Will man von externen Geraeten(Tablet) auf den laufenden Webserver zugreifen (http://+:500x/) muss in der Windowsfirewall die Ports freigegeben sein 
 und das Script in einer "als Administrator gestarteten Powershell" gestartet werden
 &#35;>
 
@@ -73,7 +74,7 @@ Aktivieren der Console &#x26; Connection debug, bei start von CSS
 
 ### Windows Security Policy: Um dieses PS-Script laufen zu lassen, muss es mit einem Zertifikat signiert werden.
 
-Ausfuehrliche Information, wie man ein "self signed certificat" erstellt und sein Script signiert
+Ausführliche Information, wie man ein "self signed certificat" erstellt und sein Script signiert
 <a href="https://www.powershelltips.com/powershell-sign-scripts/">https://www.powershelltips.com/powershell-sign-scripts/</a>
 
 Aus dem Link in kurz, s. <a href="https://youtube.com">Video</a> bzw. in Textform folgend:
@@ -82,12 +83,18 @@ Starte eine Prowershell
 
 <table>
 <th colspan="2"  align= "left" >Powershell gestartet als</th>
-<tr><td>normaler User<br/>Win+x | &#x229E;+x , Terminal  &crarr;</td>
-<td>darf localhost nutzen (kein Kontakt von ausserhalb des eigenen System)</td>
+<tr><td>normaler User<br/>Win+x | &#x229E;+x , Terminal  </td>
+<td>darf localhost nutzen (kein Kontakt von ausserhalb des eigenen System)<br/><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/PSWhoami.png"/></td>
 </tr>
 <tr>
-<td>als Administrator<br/>Win+x | &#x229E;+x , Terminal(Administrator)  &crarr;</td>
-<td>wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>Wenn extern(tablet) via Webbrowser muss das Script jedesmal als Admin gestartet werden.
+<td>als Administrator<br/>Win+x | &#x229E;+x , Terminal(Administrator) </td>
+<td>wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>= v. extern via Webbrowser, muss dem Anwender, der die App starten will, dass erlaubt werden.<br/>s. whoami<br/><br/>
+
+<blockquote>netsh http add urlacl url=http://+:5000/ user=its\bb <br/>
+netsh http add urlacl url=http://+:5001/ user=its\bb <br/>
+netsh http add urlacl url=http://+:5002/ user=its\bb <br/>
+</blockquote>
+
 </td>
 </tr></table>
 
@@ -126,4 +133,4 @@ $files2sign=".\WSSrv.psm1",".\LiteWebServer.psm1",".\CSSConsoleFilter.ps1"
 foreach ($file2sign in $files2sign) { Set-AuthenticodeSignature -FilePath $file2Sign -Certificate $cert -TimestampServer 'http://timestamp.digicert.com' }
 ```
 
-** bei jeder Änderung die man macht, signieren aller geaenderten Powershellfiles wiederholen.
+&#42;&#42; bei jeder Änderung die man macht, signieren aller geaenderten Powershellfiles wiederholen.
