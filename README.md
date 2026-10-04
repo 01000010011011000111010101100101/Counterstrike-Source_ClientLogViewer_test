@@ -8,7 +8,7 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 <li>Uhrzeit, so sieht man wann die Chatmessage kam -und man brauch das Fenster nicht wechseln um zu sehen ob es Bedtime ist. &#x1F601;</li>
 </ul>
 
-[![Video-Titel](https://img.youtube.com/vi/QVvDrGElvEUeL5U0/0.jpg)](https://www.youtube.com/watch?v=QVvDrGElvEUeL5U0)
+[![Video-Titel](https://img.youtube.com/vi/HTSSUbuOtOU?si=zX2rEV84hdbfDZaN/0.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
 
 
 ## s. <a href="https://youtube.com">Video</a> 
