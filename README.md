@@ -9,32 +9,16 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 </ul>
 
 [![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/maxresdefault.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
-[![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/0.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
-[![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/1.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
-[![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/2.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
-[![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/3.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
-[![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/4.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
-[![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/5.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
 
-
-## s. <a href="https://youtube.com">Video</a> 
 
 &#42;Die App ist für Deutsch CSS. Hat man andere Sprache, muss im Code die Abfragen/Filter entsprechend angepasst werden.
 <hr/>
 <hr/>
-Aktivieren der Console &#x26; Connection debug, bei start von CSS
-<ul>
-<li>Steam</li>
-<li>Bibliothek</li>
-<li>CSS rechte Maus-->Eigenschaften</li>
-<li>Menue "Allgemein" &commat;Startoptionen <code>-console -condebug</code>hinzufuegen</li>
-</ul>
-<img src="https://github.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/blob/main/doc/img/css_enable_console_condebug.png?raw=true"/>
-<img src="https://github.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/blob/main/doc/img/css_enabled_logfile.png?raw=true"/>
 
 
-
-## File Details (zip)
+## Installation
+ s. <a href="https://youtube.com">Video</a> 
+### File Details (zip)
 |File|Comment|
 |----|-------|
 |".\WSSrv.psm1"| WebSocketServer, damit mit einem Webbrowser via Socket Daten ausgetauscht werden kann|
@@ -43,7 +27,7 @@ Aktivieren der Console &#x26; Connection debug, bei start von CSS
 |"wwwroot"| Verzeichnis welches die Webseiten und Code fuer LiteWebServer enthaellt |
 || <table border=0><tr><td><ul><li> index.html></td><td><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_index_01.png" widht=150px height=250px/> </li></ul></td></tr><tr><td><ul><li> DReport.html </li><li>Chat.html</li><li>script.js</li></ul></td><tr></table>|
 
-## Variablen, anzupassen an eigene Umgebung
+### Variablen, anzupassen an eigene Umgebung
 
 <table>
 <th>File</th>
@@ -76,7 +60,17 @@ und das Script in einer "als Administrator gestarteten Powershell" gestartet wer
 </table>
 <br/>
 
-## Installation
+Aktivieren der Console &#x26; Connection debug, bei start von CSS
+<ul>
+<li>Steam</li>
+<li>Bibliothek</li>
+<li>CSS rechte Maus-->Eigenschaften</li>
+<li>Menue "Allgemein" &commat;Startoptionen <code>-console -condebug</code>hinzufuegen</li>
+</ul>
+<img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/css_enable_console_condebug.png"/>
+<img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/css_enabled_logfile.png"/>
+
+
 ### Windows Security Policy: Um dieses PS-Script laufen zu lassen, muss es mit einem Zertifikat signiert werden.
 
 Ausfuehrliche Information, wie man ein "self signed certificat" erstellt und sein Script signiert
@@ -105,7 +99,7 @@ enter
 
 
 
-### 1. Erstellen eines "self signed certificate"
+#### 1. Erstellen eines "self signed certificate"
 copy & paste nachfolgende Statements in die geoeffnete Powershell 
 
 
@@ -124,7 +118,7 @@ $rootStore.Close()
 ```
 
 
-### 2. Signieren aller Powershellfiles
+#### 2. Signieren aller Powershellfiles
 
 ```
 $cert = Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert | Select-Object -First 1
