@@ -3,7 +3,7 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 <ul>
 <li>Wer mich getroffen(Weiß), gekillt hat(Rot)</li>
 <li>Wen ich getroffen(Weiß), gekillt habe(Grün)</li>
-<li>Wer den Server betritt .. ich sage gern Moin moin.(Gelb 60% denkkraft)</li>
+<li>Wer den Server betritt .. ich sage gern Moin moin.(Gelb 60% Deckkraft)</li>
 <li>Admin Nachrichten(Gelb zwischen Trennlinien) &#x26; Spielerchat(Weiß,Türkis im Wechsel) sehen und nochmal leichter nachlesen, z.B wenn man auf die nächste Runde wartet</li>
 <li>Uhrzeit, so sieht man wann die Chatmessage kam -und man brauch das Fenster nicht wechseln um zu sehen ob es Bedtime ist. &#x1F601;</li>
 </ul>
@@ -34,7 +34,7 @@ Aktivieren der Console &#x26; Connection debug, bei start von CSS
 |".\LiteWebServer.psm1"| leichter Webserver der Seiten und Javascript von wwwroot s. unten bereitstellt
 |".\CSSConsoleFilter.ps1"|dieses Script ist die App selbst, vom Endanwender zu starten.<br/>Logfilter ist fuer die Deutsche Steamversion entwickelt, fuer andere Sprachen muss Anpassungen im Code gemacht werden.
 |"wwwroot"| Verzeichnis welches die Webseiten und Code fuer LiteWebServer enthaellt |
-|| <table border=0><tr><td><ul><li> index.html></td><td><img src="https://github.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/blob/main/doc/img/CSSClientLogViewer_index_01.png?raw=true" widht=150px height=250px/> </li></ul></td></tr><tr><td><ul><li> DReport.html </li><li>Chat.html</li><li>script.js</li></ul></td><tr></table>|
+|| <table border=0><tr><td><ul><li> index.html></td><td><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_index_01.png" widht=150px height=250px/> </li></ul></td></tr><tr><td><ul><li> DReport.html </li><li>Chat.html</li><li>script.js</li></ul></td><tr></table>|
 
 ## Variablen, anzupassen an eigene Umgebung
 
