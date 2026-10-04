@@ -7,11 +7,9 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 <li>Admin Nachrichten(Gelb zwischen Trennlinien) &#x26; Spielerchat(Weiß,Türkis im Wechsel) sehen und nochmal leichter nachlesen, z.B wenn man auf die nächste Runde wartet</li>
 <li>Uhrzeit, so sieht man wann die Chatmessage kam -und man brauch das Fenster nicht wechseln um zu sehen ob es Bedtime ist. &#x1F601;</li>
 </ul>
-<video width="320" height="240" controls>
-  <source src="https://www.youtube.com/embed/-cD0blu-LZ8?si=GIm5QC8_lPampOQ-" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-cD0blu-LZ8?si=GIm5QC8_lPampOQ-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[![Video-Titel](https://img.youtube.com/vi/QVvDrGElvEUeL5U0/0.jpg)](https://www.youtube.com/watch?v=QVvDrGElvEUeL5U0)
+
 
 ## s. <a href="https://youtube.com">Video</a> 
 
