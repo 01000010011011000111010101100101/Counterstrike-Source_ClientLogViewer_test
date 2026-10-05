@@ -1,5 +1,5 @@
 # **Counterstrike-Source_ClientLogViewer**
-Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeilen zu gehen, um nachzulesen was jemand in den Chat geschrieben hat oder um zu sehen ob ich den Gegner ueberhaupt getroffen habe. Deshalb habe ich die App gebaut, mit der ich auf einem zweiten Monitor via Webbrowser auf einen Blick sehe was mich interessiert.
+Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeilen zu gehen, um nachzulesen was jemand in den Chat geschrieben hat oder um zu sehen ob ich den Gegner überhaupt getroffen habe. Deshalb habe ich die App gebaut, mit der ich auf einem zweiten Monitor oder Tablet via Webbrowser auf einen Blick sehe was mich interessiert.
 <ul>
 <li>Wer mich getroffen(Weiß), gekillt hat(Rot)</li>
 <li>Wen ich getroffen(Weiß), gekillt habe(Grün)</li>
@@ -12,7 +12,7 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 [![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/maxresdefault.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
 
 
-&#42;Die App ist für Deutsch CSS. Hat man andere Sprache, muss im Code die Abfragen/Filter entsprechend angepasst werden.
+&#42;Die App ist für Deutsch CSS. Hat man andere Sprache eingestellt, muss im Code die Abfragen/Filter entsprechend angepasst werden.
 <hr/>
 <hr/>
 
@@ -26,7 +26,7 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 |".\LiteWebServer.psm1"| leichter Webserver der Seiten und Javascript von wwwroot s. unten bereitstellt
 |".\CSSConsoleFilter.ps1"|dieses Script ist die App selbst, vom Endanwender zu starten.<br/>Logfilter ist fuer die Deutsche Steamversion entwickelt, fuer andere Sprachen muss Anpassungen im Code gemacht werden.
 |"wwwroot"| Verzeichnis welches die Webseiten und Code fuer LiteWebServer enthaellt |
-|| <table border=0><tr><td><ul><li> index.html></td><td><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_index_01.png" widht=150px height=250px/><br/>im Firefox </li></ul></td></tr><tr><td><ul><li> DReport.html </li><li>Chat.html</li><li>script.js</li></ul></td><tr></table>|
+|| <table border=0><tr><td><ul><li> index.html></td><td><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_index_01.png" widht=120px height=200px/><br/>im Firefox </li></ul></td></tr><tr><td><ul><li> DReport.html </li><li>Chat.html</li><li>script.js</li></ul></td><tr></table>|
 
 ### Variablen, anzupassen an eigene Umgebung
 
@@ -74,8 +74,7 @@ Aktivieren der Console &#x26; Connection debug, bei start von CSS
 
 ### Windows Security Policy: Um dieses PS-Script laufen zu lassen, muss es mit einem Zertifikat signiert werden.
 
-Ausführliche Information, wie man ein "self signed certificat" erstellt und sein Script signiert
-<a href="https://www.powershelltips.com/powershell-sign-scripts/">https://www.powershelltips.com/powershell-sign-scripts/</a>
+Ausführliche Information, wie man ein "self signed certificat" erstellt und sein Script signiert<br/><a href="https://www.powershelltips.com/powershell-sign-scripts/">https://www.powershelltips.com/powershell-sign-scripts/</a>
 
 Aus dem Link in kurz, s. <a href="https://youtube.com">Video</a> bzw. in Textform folgend:
 
@@ -84,31 +83,42 @@ Starte eine Prowershell
 <table>
 <th colspan="2"  align= "left" >Powershell gestartet als</th>
 <tr><td>normaler User<br/>Win+x | &#x229E;+x , Terminal  </td>
-<td>darf localhost nutzen (kein Kontakt von ausserhalb des eigenen System)<br/><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/PSWhoami.png"/></td>
+<td>darf localhost nutzen (kein Kontakt von ausserhalb des eigenen System)<br/><br/>Um rauszufinden was euer Useraccount ist:<br/><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/PSWhoami.png" widht=120px height=150px/></td>
 </tr>
 <tr>
 <td>als Administrator<br/>Win+x | &#x229E;+x , Terminal(Administrator) </td>
-<td>wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>= v. extern via Webbrowser, muss dem Anwender, der die App starten will, dass erlaubt werden.<br/>s. whoami<br/><br/>
+<td>wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>= v. extern via Webbrowser, muss dem Anwender, der die App starten will, dass horchen auf allen Interfaces erlaubt werden.<br/>s. whoami normaler User<br/><br/>
 
-<blockquote>netsh http add urlacl url=http://+:5000/ user=its\bb <br/>
-netsh http add urlacl url=http://+:5001/ user=its\bb <br/>
-netsh http add urlacl url=http://+:5002/ user=its\bb <br/>
+<blockquote>netsh http add urlacl url=http://+:5000/ user=its\bb listen=yes<br/>
+netsh http add urlacl url=http://+:5001/ user=its\bb listen=yes<br/>
+netsh http add urlacl url=http://+:5002/ user=its\bb listen=yes<br/>
 </blockquote>
 
+##### Windows Firewall
+
+<blockquote>New-NetFirewallRule -DisplayName "CSSLogViewer" -Direction Inbound -Protocol TCP -LocalPort 5000 -Action Allow<br/>
+New-NetFirewallRule -DisplayName "CSSLogViewer_DMReport" -Direction Inbound -Protocol TCP -LocalPort 5001 -Action Allow<br/>
+New-NetFirewallRule -DisplayName "CSSLogViewer_Chat" -Direction Inbound -Protocol TCP -LocalPort 5002 -Action Allow<br/></blockquote>
+<img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_WFirewall.png" widht=120px height=150px/>
+<br/>
+
+Eventuelle Freigabe in einer Fritzbox in Abhängigkeit zur Version oder anderer Router etc. können hier nicht abgebildet werden.
 </td>
 </tr></table>
 
+### als normaler User:
+wechselt in der Powershell, in das Verzeichnis wo das Script liegt / wo ihr die Zipfile entpackt habt. (Adressezeile vom Dateiexplorer..)
+Setzt den Pfad aus dem Dateiexplorer anstatt folgendem Pfad (cd = change directory)
 
-wechselt in der Powershell, in das Verzeichnis wo das Script liegt. (Adressezeile vom Dateiexplorer..)
-\*setzt den Pfad aus dem Dateiexplorer anstatt folgendem Pfad (cd = change directory)
+<blockquote>
 cd "Pfad"
-enter
-
-
-
-#### 1. Erstellen eines "self signed certificate"
+&crarr;
+</blockquote>
+(cd = change directory)
+<br/><br/>
 copy & paste nachfolgende Statements in die geoeffnete Powershell 
 
+#### 1. Erstellen eines "self signed certificate"
 
 ```
 $cert = New-SelfSignedCertificate `
@@ -134,3 +144,27 @@ foreach ($file2sign in $files2sign) { Set-AuthenticodeSignature -FilePath $file2
 ```
 
 &#42;&#42; bei jeder Änderung die man macht, signieren aller geaenderten Powershellfiles wiederholen.
+
+#### 3. Powershell Executionpolicy
+<a href="https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.6">https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.6</a>
+<a href="https://serverspace.io/support/help/about-execution-policies-powershell/">https://serverspace.io/support/help/about-execution-policies-powershell/</a>
+&#42; Als der Anwender der das Script starten wird.
+
+``` Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser```
+
+
+
+
+Damit sollte das Script per Doppelklick gestartet werden und mit dem Browser eine Verbindung via
+
+<table>
+<tr><td>local: </td><td>http://localhost:5000/</td><td></td></tr>
+<tr><td>remote:</td><td>http://YourIP:5000<br/>http://YourComputername:5000</td><td>s. oben netsh<br/>&#42; Windows Firewall, die Ports muessen freigegeben sein</td></tr>
+</table>
+
+ hergestellt werden können.
+
+<hr/>
+
+<img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/createdBy.png" />
+ 
