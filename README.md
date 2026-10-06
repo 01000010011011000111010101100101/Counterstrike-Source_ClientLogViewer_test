@@ -9,8 +9,8 @@ Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeil
 </ul>
 <img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_index_01.png"/>
 
-[![Video-Titel](https://img.youtube.com/vi/q1SU3fv1g90/maxresdefault.jpg)](https://www.youtube.com/watch?v=HTSSUbuOtOU?si=zX2rEV84hdbfDZaN)
-
+[![Video-Titel](https://img.youtube.com/vi/I8PVUq3ZD3U/maxresdefault.jpg)](https://www.youtube.com/watch?v=I8PVUq3ZD3U)
+https://youtu.be/I8PVUq3ZD3U
 
 &#42;Die App ist für Deutsch CSS. Hat man andere Sprache eingestellt, muss im Code die Abfragen/Filter entsprechend angepasst werden.
 <hr/>
@@ -159,7 +159,7 @@ Damit sollte das Script per Doppelklick gestartet werden und mit dem Browser ein
 
 <table>
 <tr><td>local: </td><td>http://localhost:5000/</td><td></td></tr>
-<tr><td>remote:</td><td>http://YourIP:5000<br/>http://YourComputername:5000</td><td>s. oben netsh<br/>&#42; Windows Firewall, die Ports muessen freigegeben sein</td></tr>
+<tr><td>remote:</td><td>http://YourIP:5000<br/>http://YourComputername:5000</td><td>s. oben netsh<br/>&#42; Windows Firewall, die Ports müssen freigegeben sein</td></tr>
 </table>
 
  hergestellt werden können.
