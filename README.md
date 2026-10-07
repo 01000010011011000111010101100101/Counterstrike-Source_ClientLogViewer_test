@@ -96,9 +96,10 @@ netsh http add urlacl url=http://+:5002/ user=its\bb listen=yes<br/>
 
 ##### Windows Firewall
 
-<blockquote>New-NetFirewallRule -DisplayName "CSSLogViewer" -Direction Inbound -Protocol TCP -LocalPort 5000 -Action Allow<br/>
+```New-NetFirewallRule -DisplayName "CSSLogViewer" -Direction Inbound -Protocol TCP -LocalPort 5000 -Action Allow<br/>
 New-NetFirewallRule -DisplayName "CSSLogViewer_DMReport" -Direction Inbound -Protocol TCP -LocalPort 5001 -Action Allow<br/>
-New-NetFirewallRule -DisplayName "CSSLogViewer_Chat" -Direction Inbound -Protocol TCP -LocalPort 5002 -Action Allow<br/></blockquote>
+New-NetFirewallRule -DisplayName "CSSLogViewer_Chat" -Direction Inbound -Protocol TCP -LocalPort 5002 -Action Allow<br/>
+```
 <img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/CSSClientLogViewer_WFirewall.png" widht=120px height=150px/>
 <br/>
 
