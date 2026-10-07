@@ -121,24 +121,25 @@ cd "Pfad"
 copy & paste nachfolgende Statements in die geoeffnete Powershell 
 
 #### 1. Erstellen eines "self signed certificate"
+Create self-signed code signing certificate (requires admin for LocalMachine store)<br/>
+<blockquote>
+$cert = New-SelfSignedCertificate `<br/>
+    -Subject 'CN=PowerShell Dev Signing' `<br/>
+    -CertStoreLocation Cert:\CurrentUser\My `<br/>
+    -KeyUsage DigitalSignature `<br/>
+    -Type CodeSigningCert `<br/>
+    -NotAfter (Get-Date).AddYears(2)<br/>
+<br/>
 
-```
-# Create self-signed code signing certificate (requires admin for LocalMachine store)
-$cert = New-SelfSignedCertificate `
-    -Subject 'CN=PowerShell Dev Signing' `
-    -CertStoreLocation Cert:\CurrentUser\My `
-    -KeyUsage DigitalSignature `
-    -Type CodeSigningCert `
-    -NotAfter (Get-Date).AddYears(2)
+Write-Host "Created certificate: $($cert.Thumbprint)"<br/>
 
-Write-Host "Created certificate: $($cert.Thumbprint)"
+&#35; For the cert to be trusted locally during testing, add to Trusted Publishers<br/>
 
-# For the cert to be trusted locally during testing, add to Trusted Publishers
-$rootStore = New-Object System.Security.Cryptography.X509Certificates.X509Store('Root','CurrentUser')
-$rootStore.Open('ReadWrite')
-$rootStore.Add($cert)
-$rootStore.Close()
-```
+
+
+&#x24;rootStore = New-Object System.Security.Cryptography.X509Certificates.X509Store('Root','CurrentUser')<br/>&#x24;rootStore.Open('ReadWrite')<br/>&#x24;rootStore.Add(&#x24;cert)<br/>&#x24;rootStore.Close()<br/>
+
+</blockquote>
 
 
 #### 2. Signieren aller Powershellfiles
