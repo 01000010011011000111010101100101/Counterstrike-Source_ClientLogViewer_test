@@ -135,7 +135,7 @@ Write-Host "Created certificate: $($cert.Thumbprint)"
 # For the cert to be trusted locally during testing, add to Trusted Publishers
 $rootStore = New-Object System.Security.Cryptography.X509Certificates.X509Store('Root','CurrentUser')
 rootStore.Open('ReadWrite')
-rootStore.Add(&#x24;cert)
+rootStore.Add($cert)
 rootStore.Close()
 ```
 
