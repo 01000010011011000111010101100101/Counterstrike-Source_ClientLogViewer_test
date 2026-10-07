@@ -147,6 +147,7 @@ $rootStore.Close()
 $cert = Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert | Select-Object -First 1
 $files2sign=".\WSSrv.psm1",".\LiteWebServer.psm1",".\CSSConsoleFilter.ps1"
 foreach ($file2sign in $files2sign) { Set-AuthenticodeSignature -FilePath $file2Sign -Certificate $cert -TimestampServer 'http://timestamp.digicert.com' }
+
 ```
 
 &#42;&#42; bei jeder Änderung die man macht, signieren aller geaenderten Powershellfiles wiederholen.
