@@ -129,9 +129,6 @@ $cert = New-SelfSignedCertificate `<br/>-Subject 'CN=PowerShell Dev Signing' `<b
 Write-Host "Created certificate: $($cert.Thumbprint)"<br/>
 
 &#35; For the cert to be trusted locally during testing, add to Trusted Publishers<br/>
-
-
-
 &#x24;rootStore = New-Object System.Security.Cryptography.X509Certificates.X509Store('Root','CurrentUser')<br/>&#x24;rootStore.Open('ReadWrite')<br/>&#x24;rootStore.Add(&#x24;cert)<br/>&#x24;rootStore.Close()<br/>
 
 </blockquote>
