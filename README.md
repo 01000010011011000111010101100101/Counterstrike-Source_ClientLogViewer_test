@@ -123,17 +123,21 @@ copy & paste nachfolgende Statements in die geoeffnete Powershell
 #### 1. Erstellen eines "self signed certificate"
 
 ```
+# Create self-signed code signing certificate (requires admin for LocalMachine store)
 $cert = New-SelfSignedCertificate `
--Subject 'CN=PowerShell Dev Signing' ` 
--CertStoreLocation Cert:\CurrentUser\My ` 
--KeyUsage DigitalSignature `
--Type CodeSigningCert `
--NotAfter (Get-Date).AddYears(2) `
-Write-Host "Created certificate: $($cert.Thumbprint)"  # For the cert to be trusted locally during testing, add to Trusted Publishers `
-$rootStore = New-Object [System.Security](http://System.Security).Cryptography.X509Certificates.X509Store('Root','CurrentUser') `
-$[rootStore.Open](http://rootStore.Open)('ReadWrite') `
-$rootStore.Add($cert) `
-$rootStore.Close() 
+    -Subject 'CN=PowerShell Dev Signing' `
+    -CertStoreLocation Cert:\CurrentUser\My `
+    -KeyUsage DigitalSignature `
+    -Type CodeSigningCert `
+    -NotAfter (Get-Date).AddYears(2)
+
+Write-Host "Created certificate: $($cert.Thumbprint)"
+
+# For the cert to be trusted locally during testing, add to Trusted Publishers
+$rootStore = New-Object System.Security.Cryptography.X509Certificates.X509Store('Root','CurrentUser')
+$rootStore.Open('ReadWrite')
+$rootStore.Add($cert)
+$rootStore.Close()
 ```
 
 
