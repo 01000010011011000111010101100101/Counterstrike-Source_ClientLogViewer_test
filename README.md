@@ -123,7 +123,7 @@ copy & paste nachfolgende Statements in die geoeffnete Powershell
 #### 1. Erstellen eines "self signed certificate"
 Create self-signed code signing certificate (requires admin for LocalMachine store)<br/>
 <blockquote>
-$cert = New-SelfSignedCertificate ` <br/>-Subject 'CN=PowerShell Dev Signing' ` <br/>-CertStoreLocation Cert:\CurrentUser\My ` <br/>-KeyUsage DigitalSignature ` <br/>-Type CodeSigningCert ` <br/>-NotAfter (Get-Date).AddYears(2) <br/>
+$cert = New-SelfSignedCertificate ` <br/>-Subject 'CN=PowerShell Dev Signing' `<br/>-CertStoreLocation Cert:\CurrentUser\My `<br/>-KeyUsage DigitalSignature `<br/>-Type CodeSigningCert `<br>-NotAfter (Get-Date).AddYears(2)<br/>
 <br/>
 
 Write-Host "Created certificate: $($cert.Thumbprint)"<br/>
