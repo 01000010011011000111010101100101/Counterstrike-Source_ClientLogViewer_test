@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSSLogViewer</title>
+</head>
+<script src="script.js"></script>
+<script>
+	var wsUriDReport = "ws://localhost:5001/";
+	var wsUriChat = "ws://localhost:5002/";
+	function init(){
+		webSocketDReport(wsUriDReport);
+		webSocketChat(wsUriChat);
+		setInterval(setTime, 1000);
+	}
+	window.addEventListener("load", init, false);
+</script>
+<body style="background-color:black;color:white">
+
+		<div style="z-index: 1;height:2vh;margin-top:0vh;background-color:black;margin-left:5vw;width:90vw;">
+			<div style="background-color:black;text-align:center;float:left;width:45vw;" >
+				<H1 style="color:yellow;text-decoration: underline;" >Taken</H1>
+			</div >		
+			<div style="background-color:black;text-align:center;float:left;width:45vw;" >
+				<H1 style="color:yellow;text-decoration: underline;" >Given</H1>
+			</div >					
+		</div >		
+
+		<div id="damageR" style="z-index:1;background-color:black;height:40vh;width:90vw;margin-left:5vw; text-align:center">
+		
+
+			<div id="damageM" style="z-index: 1;background-color:black;width:90vw;height:40vh;margin-top:0vh;margin-left:0vw;text-align:center;overflow-y:scroll;">
+				</div>
+				<div style="z-index: 2;background-color:cyan;width:0vw;height:40vh;margin-top:-40vh;margin-left:-5vw;text-align:center;">
+					
+					<div  style="background-color:white;height:40vh;width:2px;opacity: 100.0;border-style:solid;margin-top:0vh;margin-left:49.8vw;border-style:none;float:left;"></div>
+
+					<div  style="background-color:white;height:40vh;width:2px;opacity: 100.0;border-style:solid;margin-top:-40vh;margin-left:50.2vw;border-style:none;float:left;"></div
+
+			</div>			
+		</div>
+
+		<div id="hr1" style="z-index:1;background-color:white;height:2px;width:90vw;margin-left:0vw;margin-top:2vh;"></div>
+		<div id="hr2" style="z-index:1;background-color:white;height:2px;width:90vw;margin-left:0vw;margin-top:0.4vh;"></div>
+
+		<div id="chatM" style="z-index: 1;background-color:black;height:40vh;width:90vw;margin-top:2vh;margin-left:0vw;text-align:left;overflow-y: scroll;"></div>
+		<div id="joinM" style="z-index: 3;background-color:black;height:10vh;width:30vw;margin-top:-15vh;margin-left:59vw;text-align:left;opacity: 60.0%;overflow-y: scroll;position: absolute; "></div>
+		<div id="displayTimer" style="z-index: 4;background-color:black;color:red;height:2vh;width:5vw;margin-top:0vh;margin-left:42.5vw;text-align:center;position: absolute;">---</div>
+		
+</body>
+</html>
