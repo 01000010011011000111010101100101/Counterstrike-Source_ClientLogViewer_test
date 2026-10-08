@@ -87,7 +87,13 @@ Starte eine Prowershell
 </tr>
 <tr>
 <td>als Administrator<br/>Win+x | &#x229E;+x , Terminal(Administrator) </td>
-<td>wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>= v. extern via Webbrowser, muss dem Anwender, der die App starten will, dass horchen auf allen Interfaces erlaubt werden.<br/>s. whoami normaler User<br/><br/>
+<td>UTF8 support in Windows Powershell<br/>To activate it:<br/><br/><code>
+    Run intl.cpl &crarr; #(which opens the regional settings in Control Panel)<br/><br/>
+    </code>
+    Follow the instructions in the screenshot below.<br/>
+<img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/YGaG1.png" widht=270px height=450px/><br/><a href="https://stackoverflow.com/questions/57131654/using-utf-8-encoding-chcp-65001-in-command-prompt-windows-powershell-window/57134096#57134096">Stackoverflow</a><br/>
+
+wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>= v. extern via Webbrowser, muss dem Anwender, der die App starten will, dass horchen auf allen Interfaces erlaubt werden.<br/>s. whoami normaler User<br/><br/>
 
 <blockquote>netsh http add urlacl url=http://+:5000/ user=its\bb listen=yes<br/>
 netsh http add urlacl url=http://+:5001/ user=its\bb listen=yes<br/>
