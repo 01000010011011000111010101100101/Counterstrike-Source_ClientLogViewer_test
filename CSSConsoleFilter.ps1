@@ -63,8 +63,8 @@ Set-AuthenticodeSignature  -FilePath $file2Sign -Certificate $cert  -TimestampSe
 ############################################################################################################
 
 
-using module "c:\tmp\WSSrv.psm1"
-using module "c:\tmp\LiteWebServer.psm1"
+using module ".\WSSrv.psm1"
+using module ".\LiteWebServer.psm1"
 param (
 	[int] $guiMode      = 0,
 	[int] $damageReport = 0,
