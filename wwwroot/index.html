@@ -5,8 +5,9 @@
 </head>
 <script src="script.js"></script>
 <script>
-	var wsUriDReport = "ws://localhost:5001/";
-	var wsUriChat = "ws://localhost:5002/";
+	var hostname="localhost"
+	var wsUriDReport = "ws://"+hostname+":5001/";
+	var wsUriChat = "ws://"+hostname+":5002/";
 	function init(){
 		webSocketDReport(wsUriDReport);
 		webSocketChat(wsUriChat);

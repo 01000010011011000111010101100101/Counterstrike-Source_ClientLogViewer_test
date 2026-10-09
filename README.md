@@ -177,7 +177,7 @@ Damit sollte das Script per Doppelklick gestartet werden und mit dem Browser ein
 
 <table>
 <tr><td>local: </td><td>http://localhost:5000/</td><td></td></tr>
-<tr><td>remote:</td><td>http://YourIP:5000<br/>http://YourComputername:5000</td><td>s. oben netsh<br/>&#42; Windows Firewall, die Ports müssen freigegeben sein</td></tr>
+<tr><td>remote:</td><td>http://YourIP:5000<br/>http://YourComputername:5000</td><td>s. oben netsh<br/>&#42; Windows Firewall, die Ports müssen freigegeben sein<br/>&#42; .\wwwroot\index.html muss anstatt localhost der Computernamen  stehen</td></tr>
 </table>
 
  hergestellt werden können.
