@@ -1,4 +1,3 @@
-/* Stretches the main containers to full screen */  .container-xl,   .container-lg,   .clearfix.new-discussion-timeline {      max-width: 100% !important;      padding-left: 32px !important;      padding-right: 32px !important;  }  /* Stretches repository file views and markdown layout */  .repository-content,   .markdown-body {      max-width: 100% !important;  }  
 # **Counterstrike-Source_ClientLogViewer**
 Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeilen zu gehen, um nachzulesen was jemand in den Chat geschrieben hat oder um zu sehen ob ich den Gegner überhaupt getroffen habe. Deshalb habe ich die App gebaut, mit der ich auf einem zweiten Monitor oder Tablet via Webbrowser auf einen Blick sehe was mich interessiert.
 <ul>
@@ -88,18 +87,19 @@ Starte eine Prowershell
 </tr>
 <tr>
 <td>als Administrator<br/>Win+x | &#x229E;+x , Terminal(Administrator) </td>
-<td>UTF8 support in Windows Powershell<br/>To activate it:<br/><br/><code>
-    Run intl.cpl &crarr; #(which opens the regional settings in Control Panel)<br/><br/>
-    </code>
+<td><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/PSasAdmin.png" widht=120px height=120px/><br/><br/>UTF8 support in Windows Powershell<br/>To activate it:<br/><br/><blockquote>
+    Run intl.cpl &crarr; #(which opens the regional settings in Control Panel)
+    </blockquote><br/><br/>
     Follow the instructions in the screenshot below.<br/>
 <img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/YGaG1.png" widht=270px height=450px/><br/><a href="https://stackoverflow.com/questions/57131654/using-utf-8-encoding-chcp-65001-in-command-prompt-windows-powershell-window/57134096#57134096">Stackoverflow</a><br/><br/>
 wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>= v. extern via Webbrowser, muss dem Anwender, der die App starten will, dass horchen auf allen Interfaces erlaubt werden.<br/>s. whoami normaler User<br/><br/>
 
-<blockquote>netsh http add urlacl url=http://+:5000/ user=its\bb listen=yes<br/>
-netsh http add urlacl url=http://+:5001/ user=its\bb listen=yes<br/>
-netsh http add urlacl url=http://+:5002/ user=its\bb listen=yes<br/>
-<br/>
-</blockquote>
+```
+netsh http add urlacl url=http://+:5000/ user=its\bb listen=yes
+netsh http add urlacl url=http://+:5001/ user=its\bb listen=yes
+netsh http add urlacl url=http://+:5002/ user=its\bb listen=yes
+
+```
 
 ##### Windows Firewall
 
