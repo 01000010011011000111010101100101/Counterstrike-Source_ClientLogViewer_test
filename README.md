@@ -45,13 +45,10 @@ https://youtu.be/I8PVUq3ZD3U
 &#x24;global:webroot          = ".\wwwroot\" # location wo index.html, DReport.html, Chat.html, script.js zu finden sind<br/>
 
 
-&#x24;global:webSrv           = "http://localhost:5000/" 
-&#35;&#x24;global:webSrv           = "http://+:5000/" #listen on any interface (matching netsh or running on admin console required)<br/>
+&#x24;global:webSrv       = "http://localhost:5000/" <br/>&#35;&#x24;global:webSrv  = "http://+:5000/" &#35;listen on any interface (matching netsh or running on admin console required)<br/>
 
-&#x24;global:webSocketDReport = "http://localhost:5001/" #"http://+:5001/",  # listen on any interface (matching netsh or running on admin console required)<br/>
-&#x24;global:webSocketChat    = "http://localhost:5002/" #"http://+:5002/",  # listen on any interface (matching netsh or running on admin console required)<br/>
-&#35;&#x24;global:webSocketDReport = "http://+:5001/" # listen on any interface (matching netsh or running on admin console required)<br/>
-&#35;&#x24;global:webSocketChat    = "http://+:5002/" # listen on any interface (matching netsh or running on admin console required)
+&#x24;global:webSocketDReport = "http://localhost:5001/" <br/>&#x24;global:webSocketChat= "http://localhost:5002/"
+&#35;&#x24;global:webSocketDReport = "http://+:5001/" # listen on any interface (matching netsh or running on admin console required)<br/>&#35;&#x24;global:webSocketChat    = "http://+:5002/" # listen on any interface (matching netsh or running on admin console required)
 
 
 <&#35; 
