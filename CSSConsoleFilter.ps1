@@ -758,7 +758,7 @@ function printText() {
 		   damagereport @top and chathistory @bottom
 		#>
 Start-Sleep -Seconds 1
-
+cd $PSScriptRoot
 
 if ($guiMode -eq 0 -and $damageReport -eq 0 -and $chatHistory -eq 0) {
 	
