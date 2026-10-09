@@ -1,3 +1,4 @@
+/* Stretches the main containers to full screen */  .container-xl,   .container-lg,   .clearfix.new-discussion-timeline {      max-width: 100% !important;      padding-left: 32px !important;      padding-right: 32px !important;  }  /* Stretches repository file views and markdown layout */  .repository-content,   .markdown-body {      max-width: 100% !important;  }  
 # **Counterstrike-Source_ClientLogViewer**
 Für mich war es unangenehm .. läßtig, staendig in der Console durch ~100 Zeilen zu gehen, um nachzulesen was jemand in den Chat geschrieben hat oder um zu sehen ob ich den Gegner überhaupt getroffen habe. Deshalb habe ich die App gebaut, mit der ich auf einem zweiten Monitor oder Tablet via Webbrowser auf einen Blick sehe was mich interessiert.
 <ul>
