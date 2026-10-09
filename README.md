@@ -71,14 +71,17 @@ Aktivieren der Console &#x26; Connection debug, bei start von CSS
 <img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/css_enable_console_condebug.png"/>
 <img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/css_enabled_logfile.png"/>
 
+<br/>
+<br/>
 
 ### Windows Security Policy: Um dieses PS-Script laufen zu lassen, muss es mit einem Zertifikat signiert werden.
 
 Ausführliche Information, wie man ein "self signed certificat" erstellt und sein Script signiert<br/><a href="https://www.powershelltips.com/powershell-sign-scripts/">https://www.powershelltips.com/powershell-sign-scripts/</a>
 
-Aus dem Link in kurz, s. <a href="https://youtube.com">Video</a> bzw. in Textform folgend:
+Aus dem Link in kurz, s. <a href="https://youtube.com">Video </a> bzw. in Textform folgend:
+Da das Video mittels einer VM gemacht, welche nur zur Demo der Installation existiert, gibt es dort nur die logfile .. kein Steam. vgl. Bild oben (Pfad)
 
-Starte eine Prowershell
+Starte zwei Prowershells
 
 <table>
 <th colspan="2"  align= "left" >Powershell gestartet als</th>
@@ -88,8 +91,8 @@ Starte eine Prowershell
 <tr>
 <td>als Administrator<br/>Win+x | &#x229E;+x , Terminal(Administrator) </td>
 <td><img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/PSasAdmin.png" widht=120px height=120px/><br/><br/>UTF8 support in Windows Powershell<br/>To activate it:<br/><br/><blockquote>
-    Run intl.cpl &crarr; #(which opens the regional settings in Control Panel)
-    </blockquote><br/><br/>
+     intl.cpl &crarr; #(which opens the regional settings in Control Panel)
+    </blockquote><br/>
     Follow the instructions in the screenshot below.<br/>
 <img src="https://raw.githubusercontent.com/01000010011011000111010101100101/Counterstrike-Source_ClientLogViewer/refs/heads/main/doc/img/YGaG1.png" widht=270px height=450px/><br/><a href="https://stackoverflow.com/questions/57131654/using-utf-8-encoding-chcp-65001-in-command-prompt-windows-powershell-window/57134096#57134096">Stackoverflow</a><br/><br/>
 wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>= v. extern via Webbrowser, muss dem Anwender, der die App starten will, dass horchen auf allen Interfaces erlaubt werden.<br/>s. whoami normaler User<br/><br/>
@@ -163,7 +166,7 @@ foreach ($file2sign in $files2sign) { Set-AuthenticodeSignature -FilePath $file2
 #### 3. Powershell Executionpolicy
 <a href="https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.6">https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.6</a>
 <a href="https://serverspace.io/support/help/about-execution-policies-powershell/">https://serverspace.io/support/help/about-execution-policies-powershell/</a>
-&#42; Als der Anwender der das Script starten wird.
+&#42; In einer Powershell, als der Anwender der das Script in zukunft starten wird.
 
 ``` Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser```
 
