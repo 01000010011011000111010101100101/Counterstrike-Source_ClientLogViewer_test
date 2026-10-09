@@ -97,6 +97,7 @@ wenn man von einem Tablet oder Handy auf diesen Webserver zugreifen moechte<br/>
 <blockquote>netsh http add urlacl url=http://+:5000/ user=its\bb listen=yes<br/>
 netsh http add urlacl url=http://+:5001/ user=its\bb listen=yes<br/>
 netsh http add urlacl url=http://+:5002/ user=its\bb listen=yes<br/>
+<br/>
 </blockquote>
 
 ##### Windows Firewall
