@@ -318,16 +318,16 @@ $global:yourUserName     = "Blue" # braucht es zum Filter von wen man gekillt wu
 $global:webroot          = ".\wwwroot\" # location wo index.html, DReport.html, Chat.html, script.js zu finden sind
 
 
-#$global:webSrv           = "http://localhost:5000/" #"http://+:5000/",  # listen on any interface (matching netsh or running on admin console required)
-$global:webSrv           = "http://+:5000/" #"http://+:5000/",  # listen on any interface (matching netsh or running on admin console required)
+$global:webSrv           = "http://localhost:5000/" 
+#$global:webSrv           = "http://+:5000/" #listen on any interface (matching netsh or running on admin console required)
 ###
-#$global:webSocketDReport = "http://localhost:5001/" #"http://+:5001/",  # listen on any interface (matching netsh or running on admin console required)
-#$global:webSocketChat    = "http://localhost:5002/" #"http://+:5002/",  # listen on any interface (matching netsh or running on admin console required)
-$global:webSocketDReport = "http://+:5001/" #"http://+:5001/",  # listen on any interface (matching netsh or running on admin console required)
-$global:webSocketChat    = "http://+:5002/" #"http://+:5002/",  # listen on any interface (matching netsh or running on admin console required)
+$global:webSocketDReport = "http://localhost:5001/" 
+$global:webSocketChat    = "http://localhost:5002/" 
+#$global:webSocketDReport = "http://+:5001/" # listen on any interface (matching netsh or running on admin console required)
+#$global:webSocketChat    = "http://+:5002/" # listen on any interface (matching netsh or running on admin console required)
 <# 
 Will man von externen Geraeten(Tablet) auf den laufenden Webserver zugreifen (http://+:500x/) muss in der Windowsfirewall die Ports freigeben sein 
-und das Script in einer "als Administrator gestarteten Powershell" gestartet werden
+und dem Anwender der das Script startet via netsh alc gesetzt sein. s. README.md@Windows Security Policy
 #>
 
 ############################################################################################################
